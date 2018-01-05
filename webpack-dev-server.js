@@ -20,4 +20,4 @@ var server = new WebpackDevServer(compiler, {
     },
     historyApiFallback: true
 });
-server.listen(8080, 'localhost', function() {});
+server.listen(8088, 'localhost', function() {});

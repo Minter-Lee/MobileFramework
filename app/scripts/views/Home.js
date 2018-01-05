@@ -1,54 +1,54 @@
-/*
- * 测试antd
-*/
+import { Component } from 'React';
 import { NavBar, Icon, Steps, WingBlank, WhiteSpace, Button } from 'antd-mobile';
-import css from '../../style/Home/Home.less';
-// import { broswerHistory } from 'react-router-dom';
-import {createBrowserHistory} from 'history';
+import less from '../../style/Home/Home.less';
+import { observer } from 'mobx-react';
+import { observable, action, useStrict } from 'mobx';
 
-const Step = Steps.Step;
+useStrict(true);
 
-const stepInfo = [{
-	title: '绑定支付宝',
-	id: 1,
-	description: ''
-},{
-	title: '系统确认',
-	id: 2,
-	description: 'T+1天'
-},{
-	title: '成功',
-	id: 3,
-	description: '开启用餐场景'
-}].map((item, index) => <Step key={item.id} title={item.title} description={item.description} />);
-
-
-
-
-
-const HomeView = (props) => {
-	console.info('props',props);
-	const handler = (e) =>{
-	    console.info('跳转');
-	    props.history.push('/homeDetail/:123/:123123',{name:123,id:'abc'})
+class Store {
+	@observable data = {
+		loading: true
+	};
+	@action getHomeData = () => {
+		fetch('/test/home.json')
+			.then(action((response) => response.json()))
+			.then(action((json) => {
+				console.info("json",json);
+				this.data = json.data;
+				this.data.loading = false;
+			}));
+	};
+	@action changeId = (aed) => {
+		this.data.id += aed
 	}
-	return [
-		<NavBar mode='light' leftContent={<Icon type='left'/>} key={1}>绑定支付宝</NavBar>,
-		<WingBlank key={2} size='lg'>
-			<WhiteSpace size='lg'/>
-			<Steps current={1} direction="horizontal">{stepInfo}</Steps>
-			<WhiteSpace size='xl'/>
-			<div className='img'></div>
-			<WhiteSpace size='xl'/>
-			<article className='homeArticle'>
-				<p className='text'>测试文本，测试文本，测试文本测试文本，测试文本，测试文本测试文本，测试文本，测试文本测试文本，测试文本，测试文本</p>
-				<WhiteSpace size='xl'/>
-				<p className='text'>测试文本，测试文本，测试文本，<span>测试文本</span>测试文本，测试文本，测试文本</p>
-			</article>
-			<WhiteSpace size='xl'/>
-			<Button type='primary'className='button' onClick={handler}>去绑定</Button>
-		</WingBlank>
-	]
-};
+}
 
-export default HomeView;
+const homeStore = new Store();
+
+@observer
+export default class HomeView extends Component{
+	constructor(props, context) {
+		super(props, context);
+		this.handlerClick.bind(this);
+	}
+
+	handlerClick() {
+		homeStore.changeId(1);
+	}
+
+	render() {
+		if (!homeStore.data.loading) {
+			return <div>
+				<span>{homeStore.data.id}</span>
+				<Button onClick={this.handlerClick}>{"替换ID"}</Button>
+			</div>
+		} else {
+			return <div>"loading......"</div>
+		}
+	}
+
+	componentDidMount() {
+		homeStore.getHomeData();
+	}
+};

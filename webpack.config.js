@@ -24,7 +24,8 @@ var WebpackCfg = {
   plugins: [
     new webpack.ProvidePlugin({
       'React': 'react',
-      'ReactDom': 'react-dom'
+      'ReactDom': 'react-dom',
+      'Fetch': 'whatwg-fetch'
     })
   ],
   //模块

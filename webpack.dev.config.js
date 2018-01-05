@@ -9,7 +9,7 @@ var baseConfig = require('./webpack.config.js');
 // 开发下可追加热部署配置
 baseConfig.entry.index.push(
   'webpack/hot/dev-server',    
-  'webpack-dev-server/client?http://localhost:8080/'
+  'webpack-dev-server/client?http://localhost:8088/'
 );
 
 baseConfig.plugins.push(
