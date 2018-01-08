@@ -4,7 +4,7 @@ useStrict(true);
 
 export default class LoadingStore {
     @observable loading = true;
-    @action completedLoading = () => {
+    @action endLoading = () => {
         this.loading = false;
     }
 }
