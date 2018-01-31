@@ -6,7 +6,7 @@ import {WingBlank, WitheSpace, NavBar, InputItem} from 'antd-mobile';
 import less from '../../style/PersonInfo/personInfo.less';
 
 const state = {
-    companyName: '北京分贝金服有限公司',
+    companyName: '北京有限公司',
     phoneNumber: '111111111111',
     personName: '王某某'
 }

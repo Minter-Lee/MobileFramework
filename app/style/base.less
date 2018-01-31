@@ -1,19 +1,33 @@
 /*字体px单位适配换算*/
 .font2px(@px){
-    font-size: round( @px / 2 ) * 1px;
+    font-size: round( @px / 4 ) * 1px;
     [data-dpr="2"] & {
-        font-size: @px * 1px;
+        font-size: round( @px / 2 ) * 1px;
     }
 
     [data-dpr="2.75"] & {
-        font-size: round(@px * 2.5 / 2) * 1px
+        font-size: round(@px * 2.5 / 4) * 1px
+    }
+
+    [data-dpr="2.625"] & {
+        font-size: round(@px * 2.5 / 5) * 1px
     }
 
     [data-dpr="3"] & {
-        font-size: round(@px * 3 / 2) * 1px
+        font-size: round(@px * 3 / 6) * 1px
+    }
+
+    [data-dpr="3.5"] & {
+        font-size: round(@px * 3 / 6) * 1px
     }
 
     [data-dpr="4"] & {
-        font-size: round(@px * 2) * 1px
+        font-size: round(@px) * 1px
     }
 }
+
+@bgWhite: #ffffff;
+@bgGray1: #f3f4f5;
+
+@fc666:#666666;
+@fc333:#333333;

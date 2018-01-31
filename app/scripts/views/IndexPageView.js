@@ -27,6 +27,12 @@ const indexStore = new IndexStore();
 
 const loadingStore = new LoadingStore();
 
+/**
+ * @author MinterLee@hotmail.com
+ * @description: 主页
+ * @Last Modified by: MinterLee@hotmail.com
+ * @Last Modified time: 2018-01-31 14:41:53
+ */
 @observer
 @HOCLoadingComponent
 export default class IndexPageView extends Component {
@@ -50,11 +56,3 @@ export default class IndexPageView extends Component {
         return <RenderView />;  
     }
 }
-
-
-
-
-
-
-
-

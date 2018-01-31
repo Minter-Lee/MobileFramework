@@ -12,3 +12,4 @@ q:before, q:after{content:' '}
 abbr,acronym{border:0;}
 a {text-decoration: none;}
 html, body, #container, .height100per{ height:100%; }
+body {background-color: #989A9C}

@@ -6,6 +6,12 @@
 var webpack = require('webpack');
 var path = require('path');
 
+let theme = {
+  "brand-primary": "#FAB325",
+  "brand-primary-tap": "#FFB526",
+  "brand-wait":"#FAB325"
+}
+
 var WebpackCfg = {
   context: path.join(__dirname, "app"),
   //页面入口文件
@@ -24,8 +30,8 @@ var WebpackCfg = {
   plugins: [
     new webpack.ProvidePlugin({
       'React': 'react',
-      'ReactDom': 'react-dom',
-      'Fetch': 'whatwg-fetch'
+      // 'ReactDom': 'react-dom',
+      // 'Fetch': 'whatwg-fetch'
     })
   ],
   //模块
@@ -50,7 +56,7 @@ var WebpackCfg = {
       use: 'html-loader' //将html转为String
     }, {
       test: /\.less$/,
-      use:['style-loader','css-loader','less-loader']
+      use:['style-loader','css-loader',`less-loader?{"modifyVars":${JSON.stringify(theme)}}`]
     }]
   }
 }

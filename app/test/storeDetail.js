@@ -9,7 +9,7 @@ const state = {
     storeName:'吉野家',
     averageCon: 25,
     openingHours:'0:00 - 12:00',
-    address:'北京市朝阳区东大桥路12号润城中心',
+    address:'北京市朝阳区',
     telephone: '110221332443'
 }
 

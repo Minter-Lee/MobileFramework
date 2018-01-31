@@ -3,6 +3,7 @@ import {Router, Route} from 'react-router-dom';
 import IndexPageView from '../views/IndexPageView';
 import BindAlipayView from '../views/BindAlipay/IndexPageView';
 import HomePageView from '../views/HomePageView';
+import WelcomePageView from '../views/WelcomePageView';
 
 const routes = (history) => (
 	<Router history={history}>
@@ -10,13 +11,9 @@ const routes = (history) => (
             <Route exact path='/'component={IndexPageView} />
             <Route path='/BindAlipay/' component={BindAlipayView} />
             <Route path='/Home/'component={HomePageView} />
+            <Route path='/WelcomePage/' component={WelcomePageView} />
         </div>
 	</Router>
 );
 
 export default routes;
-
-/*  <IndexRoute path='/PersonCenter/' component={Other} ></IndexRoute>
-    <Route path='/Dinner/' component={Other} ></Route>
-    <Route path='/Ticket/' component={Other} ></Route>
-*/
