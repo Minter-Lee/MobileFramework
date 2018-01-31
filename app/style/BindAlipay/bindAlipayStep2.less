@@ -1,0 +1,45 @@
+@import '../base.less';
+
+.bind-alipay-content {
+    .bind-alipay-img-2 {
+        height: 6.3333rem; /* 475/75 */
+    }
+
+    .bind-alipay-switch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 1.1733rem; /* 88/75 */
+        margin-top: 1.6933rem /* 127/75 */; 
+        background: #FAFBFC;
+        border: 1px solid #EAEAEA;
+        border-radius: .1067rem /* 8/75 */;
+        width: calc(~'100% - 1.28rem');
+        margin-left: 0.32rem;
+        padding: 0 0.32rem;
+        .switch-alipay {
+            height: .7467rem; /* 56/75 */
+        }
+        .switch-refresh {
+            height: 1rem;
+            width: 1.28rem; /* 96/75 */
+            line-height: 1rem;
+            padding: 0 0.3rem;
+            border-radius: .0667rem; /* 5/75 */ 
+            .refresh-img {
+                height: .4rem; /* 40/75 */
+                vertical-align: middle;
+                margin-right: .1333rem; /* 10/75 */
+            }
+            .refresh-text {
+                color: #FAB325;
+                .font2px(28px);
+                line-height: .4267rem; /* 32/75 */
+                vertical-align: middle;
+            }
+            &:hover {
+                background-color:@bgGray1;
+            }
+        }
+    }
+}

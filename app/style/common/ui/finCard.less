@@ -1,0 +1,52 @@
+@import '../../base.less';
+.fin-card-header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.25rem 0.25rem 0.2rem; /* 10/75 */
+    .fin-card-img {
+        margin-right: 0.3rem;
+        .img {
+            height: 1.1733rem /* 88/75 */;
+            width: 1.1733rem;
+            background-color: aqua;
+        }
+    }
+    .large {
+        .img {
+            height: 2.0267rem /* 152/75 */;
+            width: 2.0267rem;
+        }
+    }
+    .circle {
+        .img {
+            border-radius: 50%;
+        }
+    }
+    .fin-card-article {
+        line-height: .65rem /* 40/75 */;
+        width: calc( ~'100% - 1.7rem' );
+        &.large {
+            width: calc( ~'100% - 2.5rem' );
+            margin-top: -0.4rem;
+        }
+        .fin-card-title {
+            .font2px(34px);
+            color:#333333;
+        }
+        .fin-card-desc {
+            .font2px(28px);
+            color:#999999;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            .red-desc {
+                display: inline-block;
+                color: #F64F67;
+                background-color: #fef6f7;
+                padding: 0 5px; 
+            }
+        }
+    }
+}

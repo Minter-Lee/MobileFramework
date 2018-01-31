@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Home_Tab_Restr_Normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home_Tab_Restr_Normal">
+            <path d="M43,23 L43,45 C43,46.1045695 42.0406102,47 40.8571429,47 L15.1428571,47 C13.9593898,47 13,46.1045695 13,45 L13,23" id="Rectangle-41" stroke="#CFCFCF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <rect id="Rectangle" x="0" y="0" width="56" height="56"></rect>
+            <polyline id="Rectangle" stroke="#CFCFCF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="7 27 28 9 28 9 49 27"></polyline>
+        </g>
+    </g>
+</svg>

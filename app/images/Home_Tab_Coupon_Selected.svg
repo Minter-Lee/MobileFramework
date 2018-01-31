@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Home_Tab_Coupon_Selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home_Tab_Coupon_Selected">
+            <path d="M51,36 L51,46 C51,47.1045695 50.1045695,48 49,48 L7,48 C5.8954305,48 5,47.1045695 5,46 L5,36 C8.3137085,36 11,33.3137085 11,30 C11,26.6862915 8.3137085,24 5,24 L5,14 C5,12.8954305 5.8954305,12 7,12 L49,12 C50.1045695,12 51,12.8954305 51,14 L51,24 C47.6862915,24 45,26.6862915 45,30 C45,33.3137085 47.6862915,36 51,36 Z" id="Combined-Shape" fill="#FFB526"></path>
+            <rect id="Rectangle" x="0" y="0" width="56" height="56"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" x="22" y="24" width="12" height="4" rx="2"></rect>
+            <rect id="Rectangle-Copy" fill="#FFFFFF" x="22" y="32" width="12" height="4" rx="2"></rect>
+        </g>
+    </g>
+</svg>

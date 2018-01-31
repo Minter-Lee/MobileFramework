@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Home_Tab_User_Selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home_Tab_User_Selected">
+            <path d="M35.8686121,31.609 C39.6124107,29.093 42.0744307,24.832 42.0744307,20 C42.0744307,12.268 35.773107,6 28,6 C20.226893,6 13.9255693,12.268 13.9255693,20 C13.9255693,24.832 16.3875893,29.093 20.1313879,31.609 C13.581751,34.385 8.80850836,40.504 8.01129239,47.822 C7.88462251,48.99 8.84067848,50 10.0219254,50 L45.9780746,50 C47.1593215,50 48.1153775,48.99 47.9887076,47.822 C47.1914916,40.504 42.418249,34.385 35.8686121,31.609" id="User" fill="#FFB526"></path>
+            <rect id="Rectangle" x="0" y="0" width="56" height="56"></rect>
+        </g>
+    </g>
+</svg>

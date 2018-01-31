@@ -1,0 +1,33 @@
+@import '../../base.less';
+
+.dinner-head-content {
+    background-color: @bgWhite;
+    height: 1.28rem; /* 96/75 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    .content-search {
+        width: calc( ~'100% - 1.75rem');
+        margin-right: .32rem; /* 24/75 */
+        height: .96rem /* 72/75 */;
+        .am-search {
+            height: 0.96rem;
+            border-radius: .08rem; /* 6/75 */
+        }
+        .am-search-input {
+            background-color: inherit;
+            .am-search-clear {
+                box-sizing: content-box;
+            }
+            .am-search-synthetic-ph {
+                min-width: 100px;
+                .am-search-synthetic-ph-icon {
+                    vertical-align: middle;
+                }
+            }
+            .am-search-value {
+                vertical-align: middle;
+            }
+        }
+    } 
+}

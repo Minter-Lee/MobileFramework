@@ -1,0 +1,79 @@
+@import '../base.less';
+
+.bind-alipay {
+    background-color: @bgWhite;
+    height: 100%;
+    .bind-alipay-step {
+        padding: .56rem /* 42/75 */ 0rem; /* 48/75 */
+        background-color: @bgWhite;
+        .am-steps-item-process {
+            .am-steps-item-title {
+                color: @fc333;
+            }
+        } 
+        .am-steps-item-wait {
+            .am-steps-item-title {
+                color: #cccccc;
+            }
+        }
+    }
+    .bind-alipay-split-line {
+        height: 0.32rem;
+        background-color: @bgGray1;
+    }
+    .bind-alipay-content {
+        background-color: @bgWhite;
+        text-align: center;
+        height: 8.32rem;
+        padding-top: 1.7067rem;
+        padding-bottom: .8rem; /* 60/75 */
+    }
+
+    .am-button-small.am-button {
+        margin-top: .8533rem; /* 64/75 */
+        .font2px(28px);
+        color:@fc666;
+        width: 40%;
+        margin: 0.8533rem auto 0;
+        &::before {
+            border: none;
+        }
+    }
+}
+
+.bind-alipay-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .am-modal-content {
+        width: calc( ~'100% - 0.64rem' );
+        height: 12.3733rem; /* 928/75 */
+        border-radius: .2133rem; /* 16/75 */
+        display: flex;
+        flex-direction: column;
+        .am-modal-header {
+            padding: 0;
+            .am-modal-title {
+                .font2px(36px);
+                color: @fc333;
+                line-height: .5333rem /* 40/75 */;
+                padding: .7467rem /* 56/75 */ 0rem;
+            }
+        }
+        .modal-desc {
+            color: @fc666;
+            letter-spacing: 0;
+            line-height: .5333rem; /* 40/75 */
+            .font2px(28px);
+            margin-bottom: .32rem; /* 24/75 */
+            text-align: left;
+        }
+        .modal-img {
+            background-color: @bgGray1;
+            border-radius: .32rem; /* 24/75 */ 
+            height: 6.4rem; /* 480/75 */
+        }
+    }
+}
+

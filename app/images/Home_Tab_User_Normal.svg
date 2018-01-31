@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Home_Tab_User_Normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home_Tab_User_Normal">
+            <path d="M35.804298,31.624691 C42.2834399,34.4171469 46.9918545,40.5361901 47.779106,47.831 C47.904106,48.994 46.957106,50 45.787106,50 L10.003106,50 C8.83310603,50 7.88610603,48.994 8.01110603,47.831 C8.80356177,40.4879674 13.569194,34.3362977 20.1146377,31.5697487 C16.4231134,29.0489277 14,24.8074439 14,20 C14,12.268 20.268,6 28,6 C35.732,6 42,12.268 42,20 C42,24.8425458 39.5413723,29.1108366 35.804298,31.624691 Z M28,10 C22.486,10 18,14.486 18,20 C18,25.514 22.486,30 28,30 C33.514,30 38,25.514 38,20 C38,14.486 33.514,10 28,10 Z M27.895106,34 C20.482106,34 14.177106,39.021 12.395106,46 L43.395106,46 C41.613106,39.021 35.308106,34 27.895106,34 Z" id="User" fill="#CFCFCF"></path>
+            <rect id="Rectangle" x="0" y="0" width="56" height="56"></rect>
+        </g>
+    </g>
+</svg>
