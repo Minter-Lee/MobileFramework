@@ -2,30 +2,31 @@ import { Component } from 'React';
 import { Route } from 'react-router-dom';
 import { observable, action, useStrict } from 'mobx';
 import { observer } from 'mobx-react';
+import MFetch from '../untils/MFetch.js';
+import { Toast } from 'antd-mobile';
 
-import HomePageView from './HomePageView';
-import BindAlipayView from './BindAlipay/IndexPageView';
-
-import LoadingStore from '../store/LoadingStore';
-import HOCLoadingComponent from './common/HOCComponent/HOCLoadingComponent';
 
 useStrict(true);
 
 class IndexStore {
-    @observable isBound = false;
-    @action confirmBindState = () => {
-        fetch('./test/confirmBindState.json')
-            .then((response) => response.json())
-            .then(action((json) => {
-                this.isBound = json.data.isBound;
-                loadingStore.endLoading();
-            }));
+    @observable initialInfo = {
+        userName: null,
+        userId: null,
+        token: null,
+        firstLoginIn: false,
+        needLoginIn: false
+    }
+    @action getInitialInfo = () => {
+        Toast.loading('加载中...');
+        MFetch('/api/getInitialInfo.json','GET', {}, res => {
+            Toast.hide();
+            this.initialInfo = res.data;
+            localStorage.setItem('MF_AUTH_TOKEN', res.data.token);
+        });
     }
 }
 
 const indexStore = new IndexStore();
-
-const loadingStore = new LoadingStore();
 
 /**
  * @author MinterLee@hotmail.com
@@ -34,25 +35,17 @@ const loadingStore = new LoadingStore();
  * @Last Modified time: 2018-01-31 14:41:53
  */
 @observer
-@HOCLoadingComponent
 export default class IndexPageView extends Component {
     constructor( props, context ) {
         super(props, context);
-        this.loadingStore = loadingStore;
     }
 
     componentDidMount() {
-        if(loadingStore.loading) {
-            indexStore.confirmBindState();
-        }
+        indexStore.getInitialInfo();
     }
 
     render() {
-        const { isBound } = indexStore;
-        let RenderView = HomePageView;
-        if(!isBound) {
-            RenderView = BindAlipayView;
-        }
-        return <RenderView />;  
+        console.info('indexRender');
+        return null; 
     }
 }
