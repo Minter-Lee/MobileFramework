@@ -17,7 +17,7 @@ export default (url, method, params, callback, otherOptions) => {
     let lastUrl = url, keys = params.keys, options = {
         headers: {
             'content-type': 'application/json',
-            'auth-token': locationStorage.getItem('MF_AUTH_TOKEN')
+            'auth-token': localStorage.getItem('MF_AUTH_TOKEN')
         },
         method,
         ...otherOptions
@@ -26,9 +26,9 @@ export default (url, method, params, callback, otherOptions) => {
     switch(method) {
         case 'GET': {
             //拼接参数
-            let firstKey = keys.pop();
-            lastUrl += `?${firstKey}=${params[firstKey]}`;
-            keys.map( key => lastUrl += `&${key}=${params[key]}`);
+            // let firstKey = keys.pop();
+            // lastUrl += `?${firstKey}=${params[firstKey]}`;
+            // keys.map( key => lastUrl += `&${key}=${params[key]}`);
             options.headers['content-type'] = 'application/x-www-form-urlencoded';
             break;
         }
