@@ -11,6 +11,6 @@ if (module.hot) {
 
 const browserHistory = createBrowserHistory();
 
-debugger;
+console.info('123');
 // routes(browserHistory)
 ReactDom.render(<div>123</div>, document.getElementById('container'));
