@@ -6,11 +6,7 @@
 var webpack = require("webpack");
 var path = require("path");
 
-var precss = require("precss"),
-	autoprefixer = require("autoprefixer"),
-  	cssnano = require("cssnano"),
-	pxToViewpost = require("postcss-px-to-viewport"),
-	htmlWebpackPlugin = require("html-webpack-plugin"),  
+var htmlWebpackPlugin = require("html-webpack-plugin"),  
 	htmlWebpackHarddiskPlugin = require("html-webpack-harddisk-plugin"),
 	happypack = require("happypack"),
   	BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
@@ -22,32 +18,16 @@ let antdTheme = {
   	"brand-wait": "#FAB325"
 };
 
-// postCss配置
-var postCssLoaderCfg = {
-  	loader: "postcss-loader",
-  	options: {
-    	plugins: loader => [
-			precss,
-			autoprefixer,
-			cssnano,
-			pxToViewpost({
-				viewportWidth: 750,
-				viewportHeight: 1334,
-				viewportUnit: "vw",
-				selectorBlackList: [],
-				minPixelValue: 1,
-				mediaQuery: false
-			})
-		]
-	}
-};
-
 var WebpackCfg = {
 	context: path.join(__dirname, "app"),
 	
 	resolve: {
 		modules: [path.resolve(__dirname, 'node_modules')],
 		mainFields: ['main'],
+		// alias: {
+		// 	'react': path.resolve(__dirname, './node_modules/react/umd/react.production.min.js'),
+		// 	'mobx': path.resolve(__dirname, './node_modules/mobx/lib/mobx.es6.js')
+		// },
 		extensions: ['.js', '.less']
 	},
 
@@ -94,7 +74,6 @@ var WebpackCfg = {
 		},{
 			test: /\.js$/,
 			use: ['happypack/loader?id=babel'],
-			// use: ['babel-loader?cacheDirectory'],
 			exclude: /node_modules/
 		},{
 			test: /\.(png|jpg|jpeg)$/,
@@ -105,37 +84,14 @@ var WebpackCfg = {
 		},{
 			test: /\.svg$/,
 			use: ['happypack/loader?id=svg']
-			// use:['svg-url-loader']
 		},{
 			test: /\.less$/,
 			include: /node_modules/,
-			use: ['happypack/loader?id=antdLess'],
-			// use: [
-			// 	'style-loader',
-			// 	'css-loader',
-			// 	{
-			// 		loader: 'less-loader',
-			// 		options: {
-			// 			javascriptEnabled: true,
-			// 			modifyVars: antdTheme
-			// 		}
-			// 	}
-			// ]
+			use: ['happypack/loader?id=antdLess']
 		},{
 			test: /\.less$/,
 			include: path.resolve(__dirname, 'app/style'),
 			use: ['happypack/loader?id=less']
-			// use: [
-			// 	'style-loader',
-			// 	'css-loader',
-			// 	postCssLoaderCfg,
-			// 	{
-			// 		loader: 'less-loader',
-			// 		options: {
-			// 			javascriptEnabled: true
-			// 		}
-			// 	}
-			// ]
 		}]
 	},
 
@@ -152,6 +108,9 @@ var WebpackCfg = {
 			chunks: ['vendors', 'commons', 'index'],
 			inject: 'body',
 			alwaysWriteToDisk: true
+		}),
+		new webpack.ProvidePlugin({
+			React: "React"
 		}),
 		new htmlWebpackHarddiskPlugin(),
 		new webpack.NamedModulesPlugin(),
@@ -182,7 +141,7 @@ var WebpackCfg = {
 			loaders: [
 				'style-loader',
 				'css-loader',
-				postCssLoaderCfg,
+				'postcss-loader',
 				{
 					loader: 'less-loader',
 					options: {
